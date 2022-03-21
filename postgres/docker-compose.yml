@@ -1,0 +1,39 @@
+version: '3.8'
+networks:
+  pgNet:
+    name: "pgNet"
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:13.6-alpine
+    container_name: postgres-db
+    restart: on-failure
+    command: [ "-c", "shared_buffers=1024MB", "-c", "max_connections=400" ]
+    ports:
+      - '5432:5432'
+    environment:
+      - LANG=de_DE.utf8
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Master01
+    volumes:
+      - $HOME/docker/volumes/postgres-data:/var/lib/postgresql/data
+    networks:
+      - "pgNet"
+
+  pgadmin:
+    image: dpage/pgadmin4:6.7
+    container_name: postgres-ui
+    restart: on-failure
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: Master01
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - '7080:80'
+    volumes:
+      - $HOME/docker/volumes/pgadmin-data:/var/lib/pgadmin
+    networks:
+      - "pgNet"
