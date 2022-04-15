@@ -2,7 +2,6 @@ version: '3.8'
 networks:
   flinkNet:
     name: "flinkNet"
-    driver: bridge
 
 services:
   jobmanager:
@@ -17,7 +16,7 @@ services:
     environment:
       - JOB_MANAGER_RPC_ADDRESS=jobmanager
     networks:
-      - "flinkNet"
+      - 'flinkNet'
 
   taskmanager:
     image: flink:1.14.4-scala_2.12-java11
@@ -34,4 +33,4 @@ services:
     environment:
       - JOB_MANAGER_RPC_ADDRESS=jobmanager
     networks:
-      - "flinkNet"
+      - 'flinkNet'

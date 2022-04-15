@@ -1,7 +1,7 @@
 version: '3.8'
 networks:
   sonarNet:
-    name: "sonarNet"
+    name: 'sonarNet'
 
 services:
   sonarqube:
@@ -21,7 +21,7 @@ services:
       - sonar-extensions:/opt/sonarqube/extensions
       - sonar-plugins:/opt/sonarqube/lib/bundled-plugins
     networks:
-      - "sonarNet"
+      - 'sonarNet'
 
   db:
     image: postgres:13.6
@@ -35,7 +35,7 @@ services:
       - sonar-db:/var/lib/postgresql
       - sonar-db-data:/var/lib/postgresql/data
     networks:
-      - "sonarNet"
+      - 'sonarNet'
 
 volumes:
   sonar-conf:
