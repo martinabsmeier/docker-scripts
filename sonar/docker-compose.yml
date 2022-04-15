@@ -2,7 +2,6 @@ version: '3.8'
 networks:
   sonarNet:
     name: "sonarNet"
-    driver: bridge
 
 services:
   sonarqube:
@@ -17,10 +16,10 @@ services:
       - '9000:9000'
       - '9092:9092'
     volumes:
-      - sonarqube_conf:/opt/sonarqube/conf
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+      - sonar-conf:/opt/sonarqube/conf
+      - sonar-data:/opt/sonarqube/data
+      - sonar-extensions:/opt/sonarqube/extensions
+      - sonar-plugins:/opt/sonarqube/lib/bundled-plugins
     networks:
       - "sonarNet"
 
@@ -33,15 +32,15 @@ services:
       - POSTGRES_PASSWORD=sonarpass
       - POSTGRES_DB=sonarqube
     volumes:
-      - sonarqube_db:/var/lib/postgresql
-      - postgresql_data:/var/lib/postgresql/data
+      - sonar-db:/var/lib/postgresql
+      - sonar-db-data:/var/lib/postgresql/data
     networks:
       - "sonarNet"
 
 volumes:
-  postgresql_data:
-  sonarqube_bundled-plugins:
-  sonarqube_conf:
-  sonarqube_data:
-  sonarqube_db:
-  sonarqube_extensions:
+  sonar-conf:
+  sonar-data:
+  sonar-extensions:
+  sonar-plugins:
+  sonar-db:
+  sonar-db-data:
