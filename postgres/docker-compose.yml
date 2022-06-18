@@ -1,7 +1,4 @@
 version: '3.8'
-networks:
-  postgresNet:
-    name: 'postgresNet'
 
 services:
   postgres:
@@ -21,7 +18,7 @@ services:
       - 'postgresNet'
 
   pgadmin:
-    image: dpage/pgadmin4:6.8
+    image: dpage/pgadmin4:6.9
     container_name: postgres-ui
     restart: on-failure
     depends_on:
@@ -40,3 +37,7 @@ services:
 volumes:
   postgres-data:
   pgadmin-data:
+
+networks:
+  postgresNet:
+    name: 'postgresNet'

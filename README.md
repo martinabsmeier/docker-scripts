@@ -1,3 +1,12 @@
 # Docker scripts
+dasasdsasf
 
-Collection of useful docker scripts
+## Apache flink
+
+## Apache Kafka
+
+## Postgres
+
+## RabbitMQ
+
+## Sonar

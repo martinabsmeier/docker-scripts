@@ -1,7 +1,4 @@
 version: '3.8'
-networks:
-  flinkNet:
-    name: "flinkNet"
 
 services:
   jobmanager:
@@ -34,3 +31,7 @@ services:
       - JOB_MANAGER_RPC_ADDRESS=jobmanager
     networks:
       - 'flinkNet'
+
+networks:
+  flinkNet:
+    name: "flinkNet"
