@@ -22,7 +22,7 @@ The documentation can be found at [PostgreSQL](https://www.postgresql.org).
 RabbitMQ is the most widely deployed open source message broker.<br />
 RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ 
 can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.<br />
-The documentation can be found at [PostgreSQL](https://www.postgresql.org).
+The documentation can be found at [RabbitMQ](https://www.rabbitmq.com).
 
 ## Sonar
 SonarQube is an automatic code review tool to detect bugs, vulnerabilities, and code smells in your code. It can integrate 
