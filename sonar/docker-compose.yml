@@ -28,10 +28,10 @@ services:
       - '9000:9000'
       - '9092:9092'
     volumes:
-      - sonar-conf:/opt/sonarqube/conf
-      - sonar-data:/opt/sonarqube/data
-      - sonar-extensions:/opt/sonarqube/extensions
-      - sonar-plugins:/opt/sonarqube/lib/bundled-plugins
+      - conf:/opt/sonarqube/conf
+      - data:/opt/sonarqube/data
+      - extensions:/opt/sonarqube/extensions
+      - plugins:/opt/sonarqube/lib/bundled-plugins
     networks:
       - 'sonarNet'
 
@@ -44,18 +44,18 @@ services:
       - POSTGRES_PASSWORD=sonarpass
       - POSTGRES_DB=sonarqube
     volumes:
-      - sonar-db:/var/lib/postgresql
-      - sonar-db-data:/var/lib/postgresql/data
+      - db:/var/lib/postgresql
+      - db_data:/var/lib/postgresql/data
     networks:
       - 'sonarNet'
 
 volumes:
-  sonar-conf:
-  sonar-data:
-  sonar-extensions:
-  sonar-plugins:
-  sonar-db:
-  sonar-db-data:
+  conf:
+  data:
+  extensions:
+  plugins:
+  db:
+  db_data:
 
 networks:
   sonarNet:
