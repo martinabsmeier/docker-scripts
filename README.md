@@ -1,5 +1,5 @@
 # Docker scripts
-Is a collection of docker scripts that I created for mine to try something out and educate myself.
+Is a collection of docker compose scripts that I created for mine to try something out and educate myself.
 I hope these scripts are also useful for other developers.
 
 ## Apache flink
