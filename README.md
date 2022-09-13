@@ -33,3 +33,8 @@ The documentation can be found at [RabbitMQ](https://www.rabbitmq.com).
 SonarQube is an automatic code review tool to detect bugs, vulnerabilities, and code smells in your code. It can integrate 
 with your existing workflow to enable continuous code inspection across your project branches and pull requests.<br />
 The documentation can be found at [SonarQube](https://www.sonarqube.org).
+
+## Archiva
+Apache Archiva is an extensible repository management software that helps taking care of your own personal or enterprise-wide 
+build artifact repository. It is the perfect companion for build tools such as Maven, Continuum, and ANT.<br />
+The documentation can be found at [ApacheArchiva](https://archiva.apache.org)
