@@ -38,3 +38,9 @@ The documentation can be found at [SonarQube](https://www.sonarqube.org).
 Apache Archiva is an extensible repository management software that helps taking care of your own personal or enterprise-wide 
 build artifact repository. It is the perfect companion for build tools such as Maven, Continuum, and ANT.<br />
 The documentation can be found at [ApacheArchiva](https://archiva.apache.org)
+
+## GitLab
+The one DevOps platform.<br />
+GitLab is a single application for the entire software development lifecycle. From project planning and source code 
+management to CI/CD, monitoring, and security.<br />
+The documentation can be found at [GitLab](https://about.gitlab.com)

@@ -23,13 +23,13 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      -   archiva-data:/archiva-data
+      -   data:/archiva-data
     networks:
-      - archiva_net
+      - archivaNet
 
 volumes:
-  archiva-data:
+  data:
 
 networks:
-  archiva_net:
-    name: 'archiva_net'
+  archivaNet:
+    name: 'archivaNet'

@@ -16,37 +16,32 @@
 version: '3.8'
 
 services:
-  jobmanager:
-    image: flink:1.15.1-scala_2.12-java11
-    container_name: jobmanager
+  web:
+    image: 'gitlab/gitlab-ee:15.3.3-ee.0'
+    container_name: gitLab
     restart: on-failure
-    expose:
-      - '6123'
+    hostname: 'gitlab.example.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.example.com:8929'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2224
+      GITLAB_ROOT_PASSWORD: 'Master2010#'
     ports:
-      - '7081:8081'
-    command: jobmanager
-    environment:
-      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+      - '8929:8929'
+      - '2224:22'
+    volumes:
+      - config:/etc/gitlab
+      - logs:/var/log/gitlab
+      - data:/var/opt/gitlab
     networks:
-      - 'flinkNet'
+      - 'gitlabNet'
+    shm_size: '256m'
 
-  taskmanager:
-    image: flink:1.15.1-scala_2.12-java11
-    container_name: taskmanager
-    restart: on-failure
-    expose:
-      - '6121'
-      - '6122'
-    depends_on:
-      - jobmanager
-    command: taskmanager
-    links:
-      - 'jobmanager:jobmanager'
-    environment:
-      - JOB_MANAGER_RPC_ADDRESS=jobmanager
-    networks:
-      - 'flinkNet'
+volumes:
+  config:
+  logs:
+  data:
 
 networks:
-  flinkNet:
-    name: 'flinkNet'
+  gitlabNet:
+    name: "gitlabNet"

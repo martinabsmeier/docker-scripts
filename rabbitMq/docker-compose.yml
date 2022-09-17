@@ -27,12 +27,12 @@ services:
       - lib:/var/lib/rabbitmq
       - log:/var/log/rabbitmq
     networks:
-      - rabbitmq_net
+      - rabbitmqNet
 
 volumes:
   lib:
   log:
 
 networks:
-  rabbitmq_net:
-    name: 'rabbitmq_net'
+  rabbitmqNet:
+    name: 'rabbitmqNet'
