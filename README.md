@@ -46,3 +46,7 @@ The one DevOps platform.<br />
 GitLab is a single application for the entire software development lifecycle. From project planning and source code 
 management to CI/CD, monitoring, and security.<br />
 The documentation can be found at [GitLab](https://about.gitlab.com)
+
+## Grafana
+Grafana is the open source analytics & monitoring solution for every database.
+The documentation can be found at [Grafana](https://grafana.com)
