@@ -47,6 +47,7 @@ GitLab is a single application for the entire software development lifecycle. Fr
 management to CI/CD, monitoring, and security.<br />
 The documentation can be found at [GitLab](https://about.gitlab.com)
 
-## Grafana
-Grafana is the open source analytics & monitoring solution for every database.
-The documentation can be found at [Grafana](https://grafana.com)
+## Redmine
+Redmine is a flexible project management web application. Written using the Ruby on Rails framework, it is cross-platform
+and cross-database.<br />
+The documentation can be found at [Redmine](https://www.redmine.org)
