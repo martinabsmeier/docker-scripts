@@ -24,11 +24,28 @@ services:
       - '5434:5432'
     environment:
       - LANG=de_DE.utf8
-      - POSTGRESQL_USERNAME=redmine
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=Master01
       - POSTGRESQL_DATABASE=redmineDb
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - 'redmineNet'
+
+  pgadmin:
+    image: dpage/pgadmin4:6.15
+    container_name: redmineDbUi
+    restart: on-failure
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: Master01
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - '9081:80'
+    volumes:
+      - ui_data:/var/lib/pgadmin
     networks:
       - 'redmineNet'
 
@@ -44,18 +61,18 @@ services:
       - REDMINE_DATABASE_TYPE=postgresql
       - REDMINE_DATABASE_HOST=postgresql
       - REDMINE_DATABASE_PORT_NUMBER=5434
-      - REDMINE_DATABASE_USER=redmine
+      - REDMINE_DATABASE_USER=postgres
       - REDMINE_DATABASE_PASSWORD=Master01
       - REDMINE_DATABASE_NAME=redmineDb
     volumes:
-      - redmine_data:/bitnami/redmine
+      - data:/bitnami/redmine
     networks:
       - 'redmineNet'
 
 volumes:
-  postgres_data:
-  pgadmin_data:
-  redmine_data:
+  db_data:
+  ui_data:
+  data:
 
 networks:
   redmineNet:
