@@ -1,5 +1,3 @@
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-
 # Docker scripts
 Is a collection of docker compose scripts that I created for mine to try something out and educate myself.
 I hope these scripts are also useful for other developers.
