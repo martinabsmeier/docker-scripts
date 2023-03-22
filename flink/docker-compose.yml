@@ -31,7 +31,7 @@ services:
       - 'flinkNet'
 
   taskmanager:
-    image: flink:1.15.1-scala_2.12-java11
+    image: flink:1.16.1-scala_2.12-java11
     container_name: taskmanager
     restart: on-failure
     expose:
