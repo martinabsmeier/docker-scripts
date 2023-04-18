@@ -17,7 +17,7 @@ version: '3.9'
 
 services:
   neo4j:
-    image: neo4j:4.4.9-enterprise
+    image: neo4j:5.6.0-enterprise
     container_name: neo4j-db
     restart: on-failure
     ports:
